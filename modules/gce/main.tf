@@ -55,15 +55,13 @@ resource "google_compute_instance" "gce" {
     }
   }
 
+  allow_stopping_for_update = var.allow_stopping_for_update
   lifecycle {
     ignore_changes = [
       attached_disk,
     ]
   }
-  service_account {
-    email  = google_service_account.gce_sa.email
-    scopes = ["cloud-platform"]
-  }
+  
   depends_on = [google_project_service.compute_api]
 
   timeouts {
@@ -72,5 +70,6 @@ resource "google_compute_instance" "gce" {
     delete = var.vm_instance_timeout
   }
 }
+
 
 data "google_client_config" "google_client" {}
