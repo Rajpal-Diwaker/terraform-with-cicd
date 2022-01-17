@@ -76,7 +76,7 @@ resource "google_compute_instance" "gce" {
     scopes = ["cloud-platform"]
   }
   depends_on = [google_project_service.compute_api]
-
+z
   metadata_startup_script = file("${path.module}/script.sh")
 
   timeouts {
