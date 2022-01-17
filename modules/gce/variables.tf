@@ -9,11 +9,6 @@ variable "suffix" {
   }
 }
 
-variable "instance_name" {
-  type        = string
-  description = "A unique name for the GCE resource. Changing this forces a new resource to be created."
-}
-
 ## --- OPTIONAL PARAMETERS ------------------------------------------------------------------------------------------------
 
 variable "gcp_project_id" {

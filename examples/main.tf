@@ -1,11 +1,5 @@
-resource "random_string" "launch_id" {
-  length  = 4
-  special = false
-  upper   = false
-}
-
 locals {
-  suffix = format("%s-%s", "tf", 123)
+  suffix = format("%s-%s", "tf", '123')
 }
 
 module "kylo_ren" {
