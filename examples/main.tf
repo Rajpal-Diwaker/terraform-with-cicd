@@ -18,8 +18,8 @@ locals {
 #}
 
 
-module "gce" {
-  source           = "../modules/gce"
+module "vpc" {
+  source           = "../modules/vpc"
   suffix           = local.suffix
   gcp_project_id   = var.gcp_project_id
   vpc_network_name = "default"
