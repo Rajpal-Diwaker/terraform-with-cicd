@@ -17,3 +17,11 @@ module "kylo_ren" {
   network_tags     = ["http-server", "https-server"]
 }
 
+module "development" {
+  source           = "../modules/gce"
+  suffix           = local.suffix
+  gcp_project_id   = var.gcp_project_id
+  vpc_network_name = "default"
+  instance_name    = "development"
+  network_tags     = ["http-server", "https-server"]
+}
