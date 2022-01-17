@@ -1,10 +1,16 @@
+resource "random_string" "launch_id" {
+  length  = 4
+  special = false
+  upper   = false
+}
+
 locals {
-  suffix = format("%s-%s", "tf", "rand")
+  suffix = format("%s-%s", "tf", "temp")
 }
 
 module "kylo_ren" {
   source           = "../modules/gce"
-  suffix           = "raj_pal"
-  gcp_project_id   = "custom-valve-332208"
+  suffix           = "local.suffix"
+  gcp_project_id   = var.gcp_project_id
 }
 
