@@ -76,11 +76,6 @@ variable "vm_instance_timeout" {
   description = "How long a GCE Instance creation operation is allowed to take before being considered a failure."
 }
 
-variable "static_ip_timeout" {
-  type        = string
-  default     = "5m"
-  description = "How long a Static IP creation operation is allowed to take before being considered a failure."
-}
 
 variable "sa_timeout" {
   type        = string
