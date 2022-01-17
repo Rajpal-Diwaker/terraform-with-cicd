@@ -1,5 +1,5 @@
 locals {
-  suffix = format("%s-%s", "tf", '123')
+  suffix = format("%s-%s", "tf", "rand")
 }
 
 module "kylo_ren" {
