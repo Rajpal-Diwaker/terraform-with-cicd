@@ -11,9 +11,4 @@ resource "google_service_account" "gce_sa" {
   display_name = local.sa_id
 }
 
-resource "google_project_iam_member" "spanner_role" {
-  role   = "roles/spanner.viewer"
-  member = "serviceAccount:${google_service_account.gce_sa.email}"
-}
-
 data "google_client_config" "google_client" {}
